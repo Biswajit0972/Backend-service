@@ -61,6 +61,7 @@ export const updateNote = asyncHandler(async (req, res) => {
 export const deleteNote = asyncHandler(async (req, res) => {
   const userId = req.user;
   const noteId = req.query.id;
+
   if (!userId || !noteId)
     throw new ApiError(404, "All fields are required to delete a post");
 
@@ -78,7 +79,48 @@ export const deleteNote = asyncHandler(async (req, res) => {
 export const seeAllNotes = asyncHandler(async (req, res) => {
   const userId = req.user;
   if (!userId) throw new ApiError(400, "Please login to see all notes");
-  const allNotes = await Note.find({ userId });
+
+  const allNotes = await Note.aggregate([
+    {
+      $match: {
+        userId,
+      },
+    },
+    {
+      $limit: 1
+    },
+    {
+      $skip: 0
+    },
+    {
+      $lookup: {
+        from: "users",
+        localField: "userId",
+        foreignField: "_id",
+        as: "owner",
+      },
+    },
+    {
+      $unwind: {
+        path: "$owner"
+      }
+    },
+    {
+      $addFields: {
+        username: "$owner.username"
+      }
+    },
+    {
+      $project: {
+        _id: 1,
+        content: 1,
+        username: 1,
+        createdAt: 1,
+        updatedAt: 1
+      }
+    }
+  ]);
   if (!allNotes) throw new ApiError(400, "there is an problem");
+
   res.status(200).send(allNotes);
 });

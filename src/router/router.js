@@ -1,6 +1,6 @@
 import express from "express";
 import { verifyAuth } from "../middleware/verifyAuth.js";
-import { registerUser, loginUser, logOut, updateUser, changeUserPassword } from "../controllers/User.controller.js";
+import { registerUser, loginUser, logOut, updateUser, changeUserPassword, getUserData } from "../controllers/User.controller.js";
 import { createNote, deleteNote, seeAllNotes, updateNote } from "../controllers/Notes.controller.js";
 
 const router = express.Router();
@@ -15,4 +15,5 @@ router.route("/createnotes").post(verifyAuth, createNote);
 router.route("/deletenotes").post(verifyAuth, deleteNote);
 router.route("/updatenotes").post(verifyAuth, updateNote);
 router.route("/seenotes").get(verifyAuth, seeAllNotes);
+router.route("/getuser").get(verifyAuth, getUserData);
 export { router };
