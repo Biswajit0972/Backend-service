@@ -1,4 +1,4 @@
-# Backend-service (SIMPAL NOTES TAKING APPLICATION)
+# Backend-service (SIMPLE NOTES TAKING APPLICATION)
 
 This is a simple backend project. It is only use full for new frontend developer. Who's are don't know the backend. but need a taste of the backned.
 
