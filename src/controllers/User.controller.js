@@ -70,7 +70,8 @@ export const loginUser = asyncHandler(async (req, res) => {
     httpOnly: true,
     secure: true,
   };
-
+  
+  
   res
     .status(200)
     .cookie("refreshToken", refreshToken, options)
@@ -78,7 +79,7 @@ export const loginUser = asyncHandler(async (req, res) => {
     .send({
       user: updateUser,
       accessToken,
-      message: "User Login Succssfully",
+      message: "User Login Successfully",
     });
 });
 
@@ -150,52 +151,51 @@ export const updateUser = asyncHandler(async (req, res) => {
 });
 
 export const changeUserPassword = asyncHandler(async (req, res) => {
-
   const userId = req?.user;
   const { password: newPassword } = req.body;
 
   const user = await User.findById(userId);
-  user.password = newPassword; 
+  user.password = newPassword;
   await user.save({ validateBeforeSave: false });
 
   res.status(202).send({ message: "password change succssfully" });
 });
 
-export const getUserData = asyncHandler(async(req, res) => {
+export const getUserData = asyncHandler(async (req, res) => {
   const userId = req.user;
 
   const userProfile = await User.aggregate([
     {
       $match: {
-        _id: userId
-      }
-    }, {
+        _id: userId,
+      },
+    },
+    {
       $lookup: {
         from: "notes",
         localField: "_id",
         foreignField: "userId",
-        as: "allpost"
-      }
-    }
-    ,
+        as: "allpost",
+      },
+    },
     {
       $addFields: {
         totalNotes: {
-          $size: "$allpost"
-        }
-      }
-    }
-    ,{
+          $size: "$allpost",
+        },
+      },
+    },
+    {
       $project: {
         _id: 1,
         fullname: 1,
         username: 1,
         email: 1,
-        totalNotes: 1
-      }
-    }
-  ])
- 
+        totalNotes: 1,
+      },
+    },
+  ]);
+
   // console.log(userProfile)
-  res.status(200).send(userProfile)
-})
+  res.status(200).send(userProfile);
+});

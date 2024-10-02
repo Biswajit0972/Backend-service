@@ -78,6 +78,7 @@ export const deleteNote = asyncHandler(async (req, res) => {
 
 export const seeAllNotes = asyncHandler(async (req, res) => {
   const userId = req.user;
+  // const userId = objectId()
   if (!userId) throw new ApiError(400, "Please login to see all notes");
 
   const allNotes = await Note.aggregate([
@@ -87,10 +88,10 @@ export const seeAllNotes = asyncHandler(async (req, res) => {
       },
     },
     {
-      $limit: 1
+      $limit: 1,
     },
     {
-      $skip: 0
+      $skip: 0,
     },
     {
       $lookup: {
@@ -102,13 +103,13 @@ export const seeAllNotes = asyncHandler(async (req, res) => {
     },
     {
       $unwind: {
-        path: "$owner"
-      }
+        path: "$owner",
+      },
     },
     {
       $addFields: {
-        username: "$owner.username"
-      }
+        username: "$owner.username",
+      },
     },
     {
       $project: {
@@ -116,9 +117,9 @@ export const seeAllNotes = asyncHandler(async (req, res) => {
         content: 1,
         username: 1,
         createdAt: 1,
-        updatedAt: 1
-      }
-    }
+        updatedAt: 1,
+      },
+    },
   ]);
   if (!allNotes) throw new ApiError(400, "there is an problem");
 
