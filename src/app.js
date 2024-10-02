@@ -6,18 +6,18 @@ import { noteRouter } from "./router/note.router.js";
 
 const app = express();
 
-// const corsOptions = {
-//   origin: "*",
-//   credentials: true,
-// };
+const corsOptions = {
+  origin: "*",
+  credentials: true,
+};
 
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 app.use(cookieParser());
 
 app.get("/", (_, res) => {
-  res.status(200).send(somes);
+  res.status(200).send("welcome to the backend-service");
 });
 
 app.use(userRouter);
