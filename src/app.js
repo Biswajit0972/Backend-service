@@ -7,7 +7,7 @@ import { noteRouter } from "./router/note.router.js";
 const app = express();
 
 const corsOptions = {
-  origin: "*",
+  origin: "http://localhost:5173/",
   credentials: true,
 };
 
