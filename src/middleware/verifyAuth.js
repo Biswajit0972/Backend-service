@@ -19,7 +19,7 @@ const verifyAuth = asyncHandler(async (req, res, next) => {
     req.user = isFoundUser._id;
     next();
   } catch (error) {
-    throw new ApiError(500, "error from auth");
+    throw new ApiError(error.code, "error from auth");
   }
 });
 
