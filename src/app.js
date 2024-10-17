@@ -10,7 +10,7 @@ const corsOptions = {
   origin: "http://localhost:5173",
   credentials: true,
   sameSite: 'None',
-  Partitioned: true,
+  
 };
 
 app.use(cors(corsOptions));

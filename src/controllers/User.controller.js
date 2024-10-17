@@ -67,11 +67,11 @@ export const loginUser = asyncHandler(async (req, res) => {
   ]);
 
   const options = {
-    httpOnly: true,
-    secure: true,
+   
     httpOnly: true,
     secure: true,
     sameSite: "None",
+    Partitioned: true,
   };
 
   res
