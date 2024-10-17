@@ -70,7 +70,7 @@ export const loginUser = asyncHandler(async (req, res) => {
    
     httpOnly: true,
     secure: false,
-    sameSite: "Strict",
+    // sameSite: "Strict", 
    
   };
 
