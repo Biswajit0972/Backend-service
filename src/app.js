@@ -7,7 +7,7 @@ import { noteRouter } from "./router/note.router.js";
 const app = express();
 
 const corsOptions = {
-  origin: "https://backend-service-frontend.vercel.app/",
+  origin: "https://backend-service-frontend.vercel.app",
   credentials: true,
   // sameSite: 'strict',
 };
