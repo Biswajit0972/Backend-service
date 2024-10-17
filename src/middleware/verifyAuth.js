@@ -7,29 +7,29 @@ const verifyAuth = asyncHandler(async (req, res, next) => {
   try {
     // Get the token from cookies or Authorization header
     const token =
-      req.cookies?.accessToken || req.header("Authorization")?.replace("Bearer ", "");
-      res.send(token).status(200)
+      req.cookies?.accessToken ||
+      req.header("Authorization")?.replace("Bearer ", "");
 
-    // // If no token is found, throw an unauthorized error
-    // if (!token) {
-    //   throw new ApiError(401, "Please login or register.");
-    // }
+    // If no token is found, throw an unauthorized error
+    if (!token) {
+      throw new ApiError(401, "Please login or register.");
+    }
 
-    // // Verify the token
-    // const { id } = jwt.verify(token, process.env.SECRET_KEY);
+    // Verify the token
+    const { id } = jwt.verify(token, process.env.SECRET_KEY);
 
-    // // Check if the user exists in the database
-    // const isFoundUser = await User.findById(id);
+    // Check if the user exists in the database
+    const isFoundUser = await User.findById(id);
 
-    // // If user is not found, throw an unauthorized error
-    // if (!isFoundUser) {
-    //   throw new ApiError(401, "Invalid or expired token, please login again.");
-    // }
+    // If user is not found, throw an unauthorized error
+    if (!isFoundUser) {
+      throw new ApiError(401, "Invalid or expired token, please login again.");
+    }
 
-    // // Attach the user ID to the request object for further use
-    // req.user = isFoundUser._id;
+    // Attach the user ID to the request object for further use
+    req.user = isFoundUser._id;
 
-    // // Proceed to the next middleware or route handler
+    // Proceed to the next middleware or route handler
     next();
   } catch (error) {
     // Catch JWT verification errors or other issues
