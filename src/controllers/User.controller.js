@@ -66,12 +66,11 @@ export const loginUser = asyncHandler(async (req, res) => {
     "-refreshToken",
   ]);
 
-  const options = {
-    httpOnly: true,
-    secure: true,
-    SameSite="Lax",
-
-  };
+ const options = {
+  httpOnly: true,  // Accessible only via HTTP(S), not JavaScript
+  secure: true,    // Sent only over HTTPS
+  sameSite: "Lax"  // Prevents it from being considered as third-party in most cases
+};
 
   res
     .status(200)
