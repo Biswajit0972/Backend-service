@@ -5,7 +5,7 @@ import mongooseAggregatePaginate from "mongoose-aggregate-paginate-v2";
 
 const userSchema = new Schema(
   {
-    fullname: {
+    fullName: {
       type: String,
       required: [true, "full name is required"],
     },
@@ -40,11 +40,11 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
-userSchema.methods.ispasswordCorrect = async function (password) {
+userSchema.methods.isPasswordCorrect = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
 
-userSchema.methods.genarateRefreshToken = function () {
+userSchema.methods.generateRefreshToken = function () {
   return jwt.sign(
     {
       id: this._id,
@@ -56,11 +56,11 @@ userSchema.methods.genarateRefreshToken = function () {
   );
 };
 
-userSchema.methods.genarateAccessToken = function () {
+userSchema.methods.generateAccessToken = function () {
   return jwt.sign(
     {
       id: this._id,
-      fullname: this.fullname,
+      fullName: this.fullName,
       email: this.email,
     },
     process.env.SECARTE_KEY,
@@ -71,4 +71,4 @@ userSchema.methods.genarateAccessToken = function () {
 };
 userSchema.plugin(mongooseAggregatePaginate);
 
-export const User = mongoose.model("users", userSchema);
+export const userModel = mongoose.model("users", userSchema);
