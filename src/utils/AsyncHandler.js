@@ -1,10 +1,11 @@
 import {ApiError} from "./ApiError.js";
+import {ApiResponse} from "./ApiResponse.js";
 
 const asyncHandler = (fn) => async (req, res, next) => {
   try {
     await fn(req, res, next);
   } catch (err) {
-    res.status(err.code || 500).json(new ApiError(err.statusCode || 500, err.message || "Something went wrong",));
+    res.status(err.code || 500).json(new ApiResponse(err.statusCode || 500, err.message || "Something went wrong", "", false));
   }
 };
 
