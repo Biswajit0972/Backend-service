@@ -17,4 +17,4 @@ const noteSchema = new Schema(
 );
 
 noteSchema.plugin(mongooseAggregatePaginate)
-export const Note = mongoose.model("notes", noteSchema);
+export const noteModel = mongoose.model("notes", noteSchema);
