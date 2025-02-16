@@ -7,20 +7,14 @@ import { noteRouter } from "./router/note.router.js";
 const app = express();
 
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: "*",
   credentials: true,
-  // sameSite: 'strict',
 };
 
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 app.use(cookieParser());
-
-app.get("/", (_, res) => {
-  res.status(200).send("welcome to the backend-service");
-});
-
 app.use(userRouter);
 app.use(noteRouter);
 
