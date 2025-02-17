@@ -62,7 +62,7 @@ export const loginUser = asyncHandler(async (req, res) => {
   if (!findUser)
     throw new ApiError(404, "User not found please Sign up before sign in!");
 
-  const verifyPassword = findUser.ispasswordCorrect(password);
+  const verifyPassword = findUser.isPasswordCorrect(password);
 
   if (!verifyPassword) throw new ApiError(404, "Invalid candidate");
 
