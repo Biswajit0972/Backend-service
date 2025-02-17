@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import { ApiError } from "../utils/ApiError.js";
 import asyncHandler from "../utils/AsyncHandler.js";
-import { User } from "../models/user.models.js";
+import { userModel } from "../models/user.models.js";
 
 const verifyAuth = asyncHandler(async (req, res, next) => {
     // Get the token from cookies or Authorization header
@@ -17,11 +17,14 @@ const verifyAuth = asyncHandler(async (req, res, next) => {
   // Verify the token
   const { id } = jwt.verify(token, process.env.SECRET_KEY);
   // Check if the user exists in the database
-  const isFoundUser = await User.findById(id);
+  const isFoundUser = await userModel.findById(id);
+
   if (!isFoundUser) {
     throw new ApiError(401, "Invalid or expired token, please login again.");
   }
+
   req.user = isFoundUser._id;
+
   next();
 });
 
