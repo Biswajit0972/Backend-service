@@ -66,7 +66,7 @@ export const loginUser = asyncHandler(async (req, res) => {
 
   if (!verifyPassword) throw new ApiError(404, "Invalid candidate");
 
-  const { refreshToken, accessToken } = await genarateTokens(findUser._id);
+  const { refreshToken, accessToken } = await generateTokens(findUser._id);
 
   const updateUser = await userModel.findById(findUser._id).select([
     "-password",
