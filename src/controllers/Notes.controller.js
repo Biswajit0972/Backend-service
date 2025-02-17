@@ -2,8 +2,10 @@ import { Note } from "../models/note.model.js";
 import { User } from "../models/user.models.js";
 import { ApiError } from "../utils/ApiError.js";
 import asyncHandler from "../utils/AsyncHandler.js";
+import {ApiResponse} from "../utils/ApiResponse.js";
 
 // create a new notes
+
 export const createNote = asyncHandler(async (req, res) => {
   const userId = req.user;
 
@@ -20,21 +22,23 @@ export const createNote = asyncHandler(async (req, res) => {
   const note = await Note.create({ userId, content });
 
   const findNote = await Note.findById(note?._id).select("-userId");
+
   if (!findNote)
     throw new ApiError(
       402,
       "There is a problem while creating notes, Please try again later!"
     );
-  res.status(200).send({
-    Note: findNote,
-  });
+  res.status(200).send(new ApiResponse(200, "Note successfully created!", findNote, true));
 });
 
 export const updateNote = asyncHandler(async (req, res) => {
   const userID = req?.user;
-  const { content, noteId } = req.body;
+  const noteId = req.query.id;
+  const { content } = req.body;
 
-  if (!userID) throw new ApiError(400, "Please login to create a notes");
+  if (!userID) {
+    throw new ApiError(401, "Please login to update a notes");
+  }
 
   if ([content, noteId].some((field) => field.trim() === ""))
     throw new ApiError(402, "All fields are required");
@@ -53,9 +57,7 @@ export const updateNote = asyncHandler(async (req, res) => {
   if (!updateNote)
     throw new ApiError(500, "Something went's wrong please try again later");
 
-  res.status(201).send({
-    updateNOTE: updatedNote,
-  });
+  res.status(201).send(new ApiResponse(201, "Note successfully updated!", updateNote, true));
 });
 
 export const deleteNote = asyncHandler(async (req, res) => {
@@ -65,20 +67,18 @@ export const deleteNote = asyncHandler(async (req, res) => {
   if (!userId || !noteId)
     throw new ApiError(404, "All fields are required to delete a post");
 
-  const isUser = await User.findById(userId);
-  if (!isUser?._id) throw new ApiError(404, "please login to delete a post");
 
   const isNote = await Note.findById(noteId);
   if (!isNote?._id) throw new ApiError(404, "Note is already deleted.");
 
   await Note.deleteOne(isNote?._id);
 
-  res.status(200).send("Note is delete succssfully.");
+  res.status(200).send(new ApiResponse(201, "Note successfully deleted!", "", true));
 });
 
 export const seeAllNotes = asyncHandler(async (req, res) => {
   const userId = req.user;
-  // const userId = objectId()
+
   if (!userId) throw new ApiError(400, "Please login to see all notes");
 
   const allNotes = await Note.aggregate([
@@ -88,10 +88,10 @@ export const seeAllNotes = asyncHandler(async (req, res) => {
       },
     },
     {
-      $limit: 1,
+      $limit: 5,
     },
     {
-      $skip: 0,
+      $skip: 1,
     },
     {
       $lookup: {
@@ -123,5 +123,10 @@ export const seeAllNotes = asyncHandler(async (req, res) => {
   ]);
   if (!allNotes) throw new ApiError(400, "there is an problem");
 
-  res.status(200).send(allNotes);
+  res.status(200).send(new ApiResponse(200, "", allNotes, true));
 });
+
+export const getNotes = asyncHandler(async (req, res) => {
+  const {page,limit} = req.query;
+
+})
