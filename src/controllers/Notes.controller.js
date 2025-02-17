@@ -74,7 +74,7 @@ export const deleteNote = asyncHandler(async (req, res) => {
   res.status(200).send(new ApiResponse(201, "Note successfully deleted!", "", true));
 });
 
-export const seeAllNotesById = asyncHandler(async (req, res) => {
+export const seeAllNotesByUserId = asyncHandler(async (req, res) => {
   const userId = req.user;
 
   if (!userId) throw new ApiError(400, "Please login to see all notes");
