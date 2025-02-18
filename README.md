@@ -1,10 +1,10 @@
-# Backend-service (SIMPLE NOTES TAKING APPLICATION)
-
-This is a simple backend project. It is only use full for new frontend developer. Who's are don't know the backend. but need a taste of the backned.
-
+# Fake CURD Backend Provider
+Hey there 🙋🏻‍♂️, This is simple CURD REST API, which provides a built-in backend, to reduce time 50% development time of CURD projects. It helps you to learn  how frontend engineers mange apis in web applications and web pages.
 ### Why we use this
-
-Because this backend application learnt you, How to handel REST API request and response in frontend.
+* It reduces 50% development time of simple curd applications.
+* Provides a basic overview of REST APIs
+* Shows an overview of HTTP methods like GET,POST,UPDATE and DELETE.
+* Motivates new web developers to learn about backend.
 
 # Tech stack
 
