@@ -74,7 +74,7 @@ export const loginUser = asyncHandler(async (req, res) => {
   ]);
 
  const options = {
-  httpOnly: true,  // Accessible only via HTTP(S), not JavaScript
+  httpOnly: false,  // Accessible only via HTTP(S), not JavaScript
   secure: true,    // Sent only over HTTPS
   sameSite: "None" // Prevents it from being considered as third-party in most cases
 };
