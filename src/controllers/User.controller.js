@@ -109,6 +109,7 @@ export const logOut = asyncHandler(async (req, res) => {
     secure: true,
     sameSite: 'none',
     path: '/',
+    domain: 'https://backend-service-frontend.vercel.app'
   };
 
   res
