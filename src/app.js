@@ -7,7 +7,7 @@ import { noteRouter } from "./router/note.router.js";
 const app = express();
 
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: "https://backend-service-frontend.vercel.app",
   credentials: true,
 };
 
