@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="94940635-dd4f-4ee8-a72a-da0a3f25f153" name="Changes" comment="fix password check function name">
+      <change afterPath="$PROJECT_DIR$/.idea/Backend-service.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Biswajit0972&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Biswajit0972/Backend-service.git&quot;,
+    &quot;accountId&quot;: &quot;0fabb54d-7e50-4919-8723-6deea30d28f6&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2t7yzxTYGQNISVh8Y0FYctxr0zA" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2024.2.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-WS-243.23654.157" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="94940635-dd4f-4ee8-a72a-da0a3f25f153" name="Changes" comment="" />
+      <created>1739717676518</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1739717676518</updated>
+      <workItem from="1739717680089" duration="516000" />
+      <workItem from="1739718216130" duration="3793000" />
+      <workItem from="1739732505111" duration="1235000" />
+      <workItem from="1739761278411" duration="4606000" />
+      <workItem from="1739767008099" duration="65000" />
+      <workItem from="1739785131282" duration="5333000" />
+      <workItem from="1739877135365" duration="356000" />
+      <workItem from="1739877507018" duration="95000" />
+    </task>
+    <task id="LOCAL-00001" summary="Add env files and put env variables names in the local env">
+      <option name="closed" value="true" />
+      <created>1739718386257</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1739718386257</updated>
+    </task>
+    <task id="LOCAL-00002" summary="For testing purpose">
+      <option name="closed" value="true" />
+      <created>1739718505589</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1739718505589</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix cors options, anyone can send request from any were">
+      <option name="closed" value="true" />
+      <created>1739718619070</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1739718619070</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fix error handling.">
+      <option name="closed" value="true" />
+      <created>1739719174004</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1739719174004</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add new file ApiResponse.js">
+      <option name="closed" value="true" />
+      <created>1739719334884</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1739719334884</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fix code issue">
+      <option name="closed" value="true" />
+      <created>1739732902910</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1739732902910</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fix userModel issue">
+      <option name="closed" value="true" />
+      <created>1739733137404</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1739733137404</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fix noteModel issue">
+      <option name="closed" value="true" />
+      <created>1739733200928</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1739733200928</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fix noteModel issue">
+      <option name="closed" value="true" />
+      <created>1739733211799</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1739733211799</updated>
+    </task>
+    <task id="LOCAL-00010" summary="fix AsyncHandler.js issue">
+      <option name="closed" value="true" />
+      <created>1739733410782</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1739733410782</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Auth middleware updated!">
+      <option name="closed" value="true" />
+      <created>1739733522375</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1739733522375</updated>
+    </task>
+    <task id="LOCAL-00012" summary="user model updated and fixes some issue.">
+      <option name="closed" value="true" />
+      <created>1739762286077</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1739762286077</updated>
+    </task>
+    <task id="LOCAL-00013" summary="user model updated and fixes some issue.">
+      <option name="closed" value="true" />
+      <created>1739762320349</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1739762320349</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Update Notes.controller.js">
+      <option name="closed" value="true" />
+      <created>1739767049293</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1739767049294</updated>
+    </task>
+    <task id="LOCAL-00015" summary="fix issue">
+      <option name="closed" value="true" />
+      <created>1739787420744</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1739787420744</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Note controller fix">
+      <option name="closed" value="true" />
+      <created>1739787437954</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1739787437954</updated>
+    </task>
+    <task id="LOCAL-00017" summary="update Notes.controller.js">
+      <option name="closed" value="true" />
+      <created>1739787994584</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1739787994585</updated>
+    </task>
+    <task id="LOCAL-00018" summary="update user router">
+      <option name="closed" value="true" />
+      <created>1739789032446</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1739789032446</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fix password check function name">
+      <option name="closed" value="true" />
+      <created>1739789252249</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1739789252249</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add env files and put env variables names in the local env" />
+    <MESSAGE value="For testing purpose" />
+    <MESSAGE value="fix cors options, anyone can send request from any were" />
+    <MESSAGE value="fix error handling." />
+    <MESSAGE value="Add new file ApiResponse.js" />
+    <MESSAGE value="fix code issue" />
+    <MESSAGE value="fix userModel issue" />
+    <MESSAGE value="fix noteModel issue" />
+    <MESSAGE value="fix AsyncHandler.js issue" />
+    <MESSAGE value="Auth middleware updated!" />
+    <MESSAGE value="user model updated and fixes some issue." />
+    <MESSAGE value="Update Notes.controller.js" />
+    <MESSAGE value="fix issue" />
+    <MESSAGE value="Note controller fix" />
+    <MESSAGE value="update Notes.controller.js" />
+    <MESSAGE value="update user router" />
+    <MESSAGE value="fix password check function name" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix password check function name" />
+  </component>
+</project>
